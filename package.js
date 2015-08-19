@@ -1,7 +1,7 @@
 Package.describe({
   summary: "A reactive table designed for Meteor",
   version: "0.8.11",
-  name: "aslagle:reactive-table",
+  name: "benni:reactive-table",
   git: "https://github.com/aslagle/reactive-table.git"
 });
 
@@ -11,9 +11,8 @@ Package.on_use(function (api) {
     api.use('jquery', 'client');
     api.use('underscore', 'client');
     api.use('reactive-var@1.0.3', 'client');
-    api.use("anti:i18n@0.4.3", 'client');
     api.use("mongo@1.0.8", ["server", "client"]);
-
+ api.use("anti:i18n@0.4.3", 'client');
     api.use("fortawesome:fontawesome@4.2.0", 'client', {weak: true});
 
     api.add_files('lib/reactive_table.html', 'client');
@@ -55,12 +54,12 @@ Package.on_test(function (api) {
     api.add_files('test/test_settings.js', 'client');
     api.add_files('test/test_fields_tmpl.html', 'client');
     api.add_files('test/test_fields.js', 'client');
-  
+
     api.use('accounts-password@1.0.6', ['client', 'server']);
     api.add_files('test/test_reactivity_server.js', 'server');
     api.add_files('test/test_reactivity.html', 'client');
     api.add_files('test/test_reactivity.js', 'client');
-  
+
     api.add_files('test/test_sorting.js', 'client');
     api.add_files('test/test_filtering_server.js', 'server');
     api.add_files('test/test_filtering.js', 'client');
